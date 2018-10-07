@@ -31,11 +31,13 @@ def summary(budget):
             greatest_decrease[0] = row[0]
             greatest_decrease[1] = monthly_change
     #Print Data
+    print("Financial Analysis")
+    print("-----------------------")
     print("Total Months:" +" " + str(total_months))
     print("Total:" + " " + "$" + str(net))
-    print("Average Change:" + " " + str(float(round((monthly_change/total_months),2))))
+    print("Average Change:" + " " + "$" + str(float(round((monthly_change/total_months),2))))
     print("Greatest Increase in Profits:" +" " + str(greatest_increase))
-    print("Greatest Decrease in Profits:" + " " + str(greatest_decrease))
+    print("Greatest Decrease in Profits:" + " " +   str(greatest_decrease))
 
 
 #Open, Loop through CSV and Print Function
@@ -47,6 +49,10 @@ with open(csv_path,'r') as csvfile:
         
 #Export Text File with results 
 with open("budget_data_results.txt","w") as text_file:
+    text_file.write("Financial Analysis")
+    text_file.write("\n")
+    text_file.write("----------------------")
+    text_file.write("\n")
     text_file.write("Total Months: 86")
     text_file.write("\n")
     text_file.write("Total: $38382578")
